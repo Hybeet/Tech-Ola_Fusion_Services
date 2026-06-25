@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Ola Fusion Services | Empowering Growth</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="rebrand-banner" id="rebrandBanner">
+        <div class="ticker-wrapper">
+            <span class="ticker-text">📢 Announcement: Hybeetech_Services has officially evolved into Tech-Ola Fusion Services! Same dedication, broader solutions.</span>
+        </div>
+        <button class="close-banner-btn" id="closeBannerBtn">&times;</button>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/TOFS LOGO 1.png" alt="Tech-Ola Logo" class="logo-img">
+            <div class="logo-text">Tech<span>Ola</span> Fusion Services</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 id="typing-text">Empowering Growth Through...</h1>
+        <p>We deliver practical tech solutions, advanced engineering machine design, 
+            and professional career development strategies tailored for your success.</p>
+        <button class="cta-btn" 
+        onclick="document.getElementById('feedback-form').scrollIntoView({behavior: 'smooth'});">Get In Touch
+        </button>
+    </section>
+
+    <section class="pillars-section">
+        <h2 class="section-title">Our Operational Pillars</h2>
+        <p class="section-subtitle">Simplifying complexity, delivering impact across three specialized ecosystems.</p>
+        
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon">📊</div>
+                <h3>Data & Tech Education</h3>
+                <p>Master Microsoft Excel, Google Workspace, and dive into data visualization or foundational Web3 and Crypto operations.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon">⚙️</div>
+                <h3>Engineering & Machine Design</h3>
+                <p>Advanced 2D/3D modeling, component assembly simulations, drafting, and detailed engineering report documentations.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon">💼</div>
+                <h3>Digital Solutions & Career</h3>
+                <p>From workflow automation parsers to high-tier LinkedIn transformations and bespoke data dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>What Our Clients Say</h2>
+        
+        <div class="slider-container">
+            <div class="testimonial-slide active">
+                <p class="testimonial-text">"The manual brick mould design was constructed perfectly inside Fusion 360.
+                     Tech-Ola helped us visualize the scale tolerances flawlessly before moving into production. 
+                     Highly recommended for accurate mechanical design!"</p>
+                <p class="testimonial-author">— Manufacturing Project Lead</p>
+            </div>
+
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"Our business data was completely unorganized until they built a custom transaction parser tool for us. 
+                    Now, everything syncs natively into Google Sheets seamlessly. 
+                    It saved us dozens of weekly working hours."</p>
+                <p class="testimonial-author">— Operations Manager, Financial Services</p>
+            </div>
+
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"Incredible data analytics tutoring. The instructor breaks down complex formulas, layout macros, 
+                    and reporting rules with absolute patience. 
+                    My spreadsheet skillset completely transformed."</p>
+                <p class="testimonial-author">— Professional Tutoring Student</p>
+            </div>
+
+            <button class="slider-btn prev-btn" id="prevSlideBtn">&#10094;</button>
+            <button class="slider-btn next-btn" id="nextSlideBtn">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="feedback-section" id="feedback-form">
+        <div class="form-container">
+            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 10px;">Let's Connect</h2>
+            <p class="section-subtitle" style="margin-bottom: 30px; font-size: 0.95rem;">Have an inquiry, feedback, or an idea to discuss? Drop a message directly to our inbox.</p>
+            
+            <form action="https://formspree.io/f/mgoqkbyl" method="POST">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+                <div class="form-group services-checkbox-group">
+                    <label class="checkbox-group-title">What services do you need? (Select all that apply)</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="Service requested" value="Mechanical/CAD Design"> 
+                            <span>Mechanical / CAD Design</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="Service requested" value="Website Development"> 
+                            <span>Website Development</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="Service requested" value="Profile Optimization"> 
+                            <span>CV / LinkedIn Optimization</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="Service requested" value="Technical Report"> 
+                            <span>Project Write up</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="Service requested" value="Professional Tutoring"> 
+                            <span>Professional Tutoring</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="Service requested" value="Data Analytics/Automation"> 
+                            <span>Data Analytics & Automation</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="intent">How Can We Help You?</label>
+                    <select id="intent" name="intent" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="Training/Tutoring Inquiry">I want to learn a skill / Software Tutoring</option>
+                        <option value="Engineering Project">I need Engineering or Machine Design work</option>
+                        <option value="Digital Automation Solution">I need Web Automation / Custom Reporting System</option>
+                        <option value="Career Optimization">I need CV Revamp / LinkedIn Optimization</option>
+                        <option value="General Feedback/Suggestions">I want to leave a suggestion/feedback</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message / Opinions / Suggestions</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us how we can add value to your goals..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tech-Ola Fusion Services. All Rights Reserved. (Formerly Hybeetech_Services)</p>
+    </footer>
+
+    <a href="https://wa.me/2347015529492?text=Hello%20Tech-Ola%20Fusion%20Services!%20I%20visited%20your%20website%20and%20I%20am%20interested%20in%20your%20services." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer">
+       💬
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

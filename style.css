@@ -1,0 +1,796 @@
+/* ==========================================================================
+   BRAND COLOR PALETTE & CSS VARIABLES
+   ========================================================================== */
+:root {
+    --bg-black: #0A0A0A;
+    --card-black: #141414;
+    --gold-primary: #D4AF37;
+    --gold-bright: #FFD700;
+    --white: #FFFFFF;
+    --text-gray: #B3B3B3;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================================
+   GLOBAL RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--bg-black);
+    color: var(--white);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   1. UNIVERSAL CONTINUOUS TICKER BANNER (DESKTOP & MOBILE)
+   ========================================================================== */
+.rebrand-banner {
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright)) !important;
+    color: #000000 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 15px !important;
+    position: relative !important;
+    width: 100% !important;
+    height: 40px !important;
+    z-index: 99999 !important; /* Force it on top of all header template layers */
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.ticker-wrapper {
+    flex: 1 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.ticker-text {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    font-size: 0.95rem !important;
+    font-weight: bold !important;
+    color: #000000 !important;
+    letter-spacing: 0.5px;
+    padding-left: 100% !important; /* Pushes the message to start off-screen right */
+    animation: universalTickerAnimation 18s linear infinite !important;
+}
+
+/* Fluid infinite right-to-left crawl looping mechanism */
+@keyframes universalTickerAnimation {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* Static Close Button overlapping the moving tracks cleanly */
+.close-banner-btn {
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright)) !important;
+    box-shadow: -15px 0 15px 5px var(--gold-primary) !important; /* Blurs the text edge nicely */
+    border: none !important;
+    color: #000000 !important;
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    padding: 0 5px 0 10px !important;
+    margin-left: 0 !important;
+    z-index: 100000 !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR HEADER
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(10, 10, 10, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.logo-img {
+    height: 50px; 
+    width: auto;
+}
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+}
+.logo-text span {
+    color: var(--gold-primary);
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover, nav ul li a.active {
+    color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, #1a1a1a 0%, var(--bg-black) 70%);
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    max-width: 900px;
+    font-weight: 800;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+.cta-btn {
+    background-color: transparent;
+    color: var(--gold-primary);
+    border: 2px solid var(--gold-primary);
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cta-btn:hover {
+    background-color: var(--gold-primary);
+    color: var(--bg-black);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   3. INTERACTIVE PILLARS SECTION
+   ========================================================================== */
+.pillars-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+.section-subtitle {
+    color: var(--text-gray);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.pillar-card {
+    background-color: var(--card-black);
+    border: 1px solid #222;
+    padding: 40px 30px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.pillar-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.pillar-card:hover::before {
+    transform: scaleX(1);
+}
+.pillar-icon {
+    font-size: 2.5rem;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+}
+.pillar-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+.pillar-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   4. INTERACTIVE MINI FEEDBACK FORM
+   ========================================================================== */
+.feedback-section {
+    background-color: rgb(188, 186, 186);
+    padding: 80px 8%;
+    border-top: 1px solid #222;
+}
+.services-checkbox-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+.checkbox-group-title {
+    display: block;
+    color: var(--gold-primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #222;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--gold-primary);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+.checkbox-label:hover {
+    color: var(--white);
+}
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--bg-black);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--gold-primary);
+    font-weight: 500;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #141414;
+    border: 1px solid #444;
+    color: var(--white);
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold-primary);
+}
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright));
+    color: var(--bg-black);
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
+}
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   SERVICES PAGES HEADLINES & TABS SYSTEM
+   ========================================================================== */
+.services-hero {
+    padding: 60px 8% 20px 8%;
+    text-align: center;
+}
+.services-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+.services-hero p {
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    padding: 0 8%;
+    flex-wrap: wrap;
+}
+.tab-btn {
+    background-color: var(--card-black);
+    color: var(--white);
+    border: 1px solid #333;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.tab-btn:hover {
+    border-color: var(--gold-primary);
+}
+.tab-btn.active {
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright));
+    color: var(--bg-black);
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+.tab-panel {
+    display: none;
+    padding: 0 8% 80px 8%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.tab-panel.active {
+    display: block;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.service-card {
+    background-color: var(--card-black);
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+}
+.service-img-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #222;
+    position: relative;
+}
+.service-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service-info {
+    padding: 25px;
+}
+.service-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--gold-primary);
+}
+.service-info p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   PORTFOLIO GALLERY SPECIFIC STYLES
+   ========================================================================== */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 0 8%;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    background-color: var(--card-black);
+    color: var(--white);
+    border: 1px solid #333;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover {
+    border-color: var(--gold-primary);
+}
+.filter-btn.active {
+    background-color: var(--gold-primary);
+    color: var(--bg-black);
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 0 8% 80px 8%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.portfolio-card {
+    background-color: var(--card-black);
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.portfolio-card.show {
+    display: flex;
+    animation: scaleUp 0.4s ease-in-out forwards;
+}
+.portfolio-card.hide {
+    display: none !important;
+}
+.portfolio-img-container {
+    width: 100%;
+    height: 220px;
+    background-color: #161616;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.portfolio-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.portfolio-details {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.project-tag {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gold-bright);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+.portfolio-details h3 {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+.portfolio-details p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   TESTIMONIAL SLIDER STYLES
+   ========================================================================== */
+.testimonials-section {
+    padding: 80px 8%;
+    background-color: var(--card-black);
+    text-align: center;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    position: relative;
+    overflow: hidden;
+}
+.testimonials-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--white);
+}
+.slider-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 220px;
+}
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+    pointer-events: auto;
+}
+.testimonial-slide.active {
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.testimonial-author {
+    font-weight: bold;
+    color: var(--gold-primary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 1px solid #444;
+    color: var(--white);
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.slider-btn:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+    background-color: rgba(214, 175, 55, 0.05);
+}
+.prev-btn { left: -60px; }
+.next-btn { right: -60px; }
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON STYLES
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10005;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(37, 211, 102, 0.5);
+}
+
+/* ==========================================================================
+   THANKS PAGE STYLING
+   ========================================================================== */
+.thanks-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.thanks-icon {
+    font-size: 4rem;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+}
+.thanks-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.thanks-container p {
+    color: var(--text-gray);
+    max-width: 500px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+.back-home-btn {
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-bright));
+    color: var(--bg-black);
+    padding: 12px 30px;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+.back-home-btn:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   ANIMATION KEYFRAMES
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================================================
+   UNIFIED RESPONSIVE MEDIA QUERIES (TABLETS & PHONE SCREEN BREAKPOINTS)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+    .slider-btn { background-color: var(--bg-black); }
+}
+
+@media (max-width: 768px) {
+    /* 1. Force Banner into a Continuous Infinite Ticker Loop */
+    .rebrand-banner {
+        height: 38px !important;
+        padding: 0 10px 0 15px !important;
+    }
+    .ticker-text {
+        font-size: 0.8rem !important; /* Slightly smaller text for sharper fit on mobile */
+    }
+    .close-banner-btn {
+        font-size: 1.2rem !important;
+        padding: 0 5px 0 8px !important;
+    }
+
+    /* 2. Resize and Lock Navbar Layout on One Single Row */
+    header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 12px 4% !important;
+        background-color: var(--bg-black) !important;
+    }
+    .logo-container {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin-bottom: 0 !important;
+    }
+    .logo-container img, 
+    header .logo-img,
+    header .logo {
+        height: 24px !important;
+        width: auto !important;
+    }
+    .logo-text,
+    header h1,
+    header h1 a,
+    .brand-name {
+        font-size: 0.95rem !important;
+        font-weight: bold !important;
+        color: #ffffff !important; /* Forced bright white visibility */
+        letter-spacing: 0.3px !important;
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+    nav ul li a {
+        font-size: 0.8rem !important;
+        padding: 4px 4px !important;
+        color: var(--white) !important;
+        white-space: nowrap !important;
+    }
+
+    /* 3. General Sections Scaling */
+    .hero h1 { font-size: 2rem; }
+    .form-container { padding: 25px; }
+    .services-hero h1 { font-size: 2rem; }
+    .tabs-container { flex-direction: column; width: 100%; }
+    .tab-btn { width: 100%; text-align: center; }
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+    .filter-container { flex-direction: column; }
+    .filter-btn { width: 100%; text-align: center; }
+}
